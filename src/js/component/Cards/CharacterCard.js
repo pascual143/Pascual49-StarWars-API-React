@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { Link } from "react-router-dom";
-import "../../../styles/cards.css";
 import { useContext } from "react";
 import { Context } from "../../store/appContext";
+
+import "../../../styles/cards.css";
+
 
 const CharacterCard = (props) => {
   const { store, actions } = useContext(Context);
@@ -14,7 +18,7 @@ const CharacterCard = (props) => {
           props.id + 1
         }.jpg`}
         className="card-img-top"
-        alt="..."
+        alt="character image"
         style={{ width: "300px", height: "auto", borderRadius: "5px" }}
       />
       <div className="card-body">
@@ -40,7 +44,7 @@ const CharacterCard = (props) => {
           >
             <div style={{ marginLeft: "10px" }}>
               <i class="bi bi-star" style={{ color: "#ffd43b" }}>
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
@@ -60,3 +64,10 @@ const CharacterCard = (props) => {
 };
 
 export default CharacterCard;
+
+CharacterCard.propTypes = {
+  name: PropTypes.string,
+  height: PropTypes.number,
+  mass: PropTypes.string,
+  gender: PropTypes.string,
+};

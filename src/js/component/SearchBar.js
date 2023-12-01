@@ -55,7 +55,8 @@ const SearchBar = () => {
         <button
           className="btn btn-success"
           type="submit"
-          onClick={(e) => handleSearch(e)}>
+          onClick={(e) => handleSearch(e)}
+        >
           Search
         </button>
       </form>

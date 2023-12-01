@@ -31,9 +31,7 @@ export const Navbar = (props) => {
           aria-expanded="false"
         >
           <span className="me-5 ">Favorites</span>
-          <div
-            className="bg bg-secondary  me-4 secondary"
-          >
+          <div className="bg bg-secondary  me-4 secondary">
             <span>
               <strong>{store.favorites.length}</strong>
             </span>

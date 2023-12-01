@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
-import "../../../styles/cards.css";
+import PropTypes from 'prop-types';
+
 import { Context } from "../../store/appContext";
 import { Link } from "react-router-dom";
+
+import "../../../styles/cards.css";
 
 const PlanetsCard = (props) => {
   const { store, actions } = useContext(Context);
@@ -31,7 +34,7 @@ const PlanetsCard = (props) => {
             className="favoritesCards"
             onClick={() => {
               if (store.favorites.includes(props.planet.name)) {
-                alert("Element already on the list");
+                alert("Element is already on the list");
               } else {
                 actions.addFavorites(props.planet.name);
               }
@@ -59,3 +62,10 @@ const PlanetsCard = (props) => {
 };
 
 export default PlanetsCard;
+
+PlanetsCard.propTypes = {
+  name: PropTypes.string,
+  population: PropTypes.number,
+  terrain: PropTypes.string,
+  climate: PropTypes.string,
+};
